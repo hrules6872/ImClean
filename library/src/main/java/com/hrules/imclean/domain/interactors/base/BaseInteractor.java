@@ -12,32 +12,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.3'
-    classpath 'com.novoda:bintray-release:0.4.0' // +info: https://github.com/novoda/bintray-release/releases/tag/0.5.0
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
-  }
-}
+package com.hrules.imclean.domain.interactors.base;
 
-allprojects {
-  repositories {
-    jcenter()
-    maven {
-      url "https://maven.google.com"
-    }
-  }
+public interface BaseInteractor extends Runnable {
 }
-
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}
-
-apply plugin: 'com.github.ben-manes.versions'
-apply from: 'buildsystem/dependencies.gradle'

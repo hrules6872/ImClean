@@ -15,29 +15,22 @@
  *
  */
 
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.3'
-    classpath 'com.novoda:bintray-release:0.4.0' // +info: https://github.com/novoda/bintray-release/releases/tag/0.5.0
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
-  }
-}
+package com.hrules.imclean.domain.specifications;
 
-allprojects {
-  repositories {
-    jcenter()
-    maven {
-      url "https://maven.google.com"
-    }
+import android.support.annotation.NonNull;
+
+public abstract class Specification<T> {
+  private SpecificationParams params;
+
+  public SpecificationParams getParams() {
+    return params;
   }
-}
 
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}
+  public void setParams(@NonNull SpecificationParams params) {
+    this.params = params;
+  }
 
-apply plugin: 'com.github.ben-manes.versions'
-apply from: 'buildsystem/dependencies.gradle'
+  public abstract @NonNull Class getParent();
+
+  public abstract T get();
+}

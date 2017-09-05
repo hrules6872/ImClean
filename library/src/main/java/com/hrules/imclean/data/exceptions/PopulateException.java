@@ -15,29 +15,12 @@
  *
  */
 
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.3'
-    classpath 'com.novoda:bintray-release:0.4.0' // +info: https://github.com/novoda/bintray-release/releases/tag/0.5.0
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
-  }
-}
+package com.hrules.imclean.data.exceptions;
 
-allprojects {
-  repositories {
-    jcenter()
-    maven {
-      url "https://maven.google.com"
-    }
+import android.support.annotation.Nullable;
+
+public class PopulateException extends Exception {
+  public PopulateException(@Nullable Exception e) {
+    super(e);
   }
 }
-
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}
-
-apply plugin: 'com.github.ben-manes.versions'
-apply from: 'buildsystem/dependencies.gradle'

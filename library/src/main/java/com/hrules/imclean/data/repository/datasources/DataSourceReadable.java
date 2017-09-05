@@ -15,29 +15,15 @@
  *
  */
 
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.3'
-    classpath 'com.novoda:bintray-release:0.4.0' // +info: https://github.com/novoda/bintray-release/releases/tag/0.5.0
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
-  }
-}
+package com.hrules.imclean.data.repository.datasources;
 
-allprojects {
-  repositories {
-    jcenter()
-    maven {
-      url "https://maven.google.com"
-    }
-  }
-}
+import android.support.annotation.NonNull;
+import com.hrules.imclean.domain.models.ModelDto;
+import com.hrules.imclean.domain.specifications.Specification;
+import java.util.Collection;
 
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}
+public abstract class DataSourceReadable<T extends ModelDto> extends DataSource<T> {
+  public abstract Collection<T> query(@NonNull Specification specification) throws Exception;
 
-apply plugin: 'com.github.ben-manes.versions'
-apply from: 'buildsystem/dependencies.gradle'
+  public abstract boolean isCacheExpired();
+}

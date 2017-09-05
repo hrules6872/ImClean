@@ -15,29 +15,17 @@
  *
  */
 
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.3'
-    classpath 'com.novoda:bintray-release:0.4.0' // +info: https://github.com/novoda/bintray-release/releases/tag/0.5.0
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
-  }
-}
+package com.hrules.imclean.domain.threads;
 
-allprojects {
-  repositories {
-    jcenter()
-    maven {
-      url "https://maven.google.com"
-    }
+import android.os.Handler;
+import android.os.Looper;
+import android.support.annotation.NonNull;
+import com.hrules.imclean.domain.threads.base.ThreadExecutor;
+
+public final class UIThreadExecutor implements ThreadExecutor {
+  private final Handler handler = new Handler(Looper.getMainLooper());
+
+  public void execute(@NonNull Runnable runnable) {
+    handler.post(runnable);
   }
 }
-
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}
-
-apply plugin: 'com.github.ben-manes.versions'
-apply from: 'buildsystem/dependencies.gradle'
