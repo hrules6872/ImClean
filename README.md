@@ -12,7 +12,7 @@ dependencies {
 ```
 ### Examples
 
-- [ ] TODO
+https://github.com/hrules6872/GitEgo/tree/example-use-imclean-library
 
 Developed by
 -------
