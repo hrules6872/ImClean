@@ -24,7 +24,7 @@ ext {
   // internal
   libraryVersionMajor = 1
   libraryVersionMinor = 0
-  libraryVersionPatch = 0
+  libraryVersionPatch = 1
   libraryVersionBuild = 0
 
   libraryVersionCode = libraryVersionMajor * 1000000 + libraryVersionMinor * 10000 + libraryVersionPatch * 100 + libraryVersionBuild
