@@ -18,5 +18,5 @@
 package com.hrules.imclean.domain.models;
 
 public abstract class ModelDto {
-  protected static final int NO_ID = -1;
+  public static final int NO_ID = -1;
 }
