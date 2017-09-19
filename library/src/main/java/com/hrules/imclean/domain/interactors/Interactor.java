@@ -27,7 +27,7 @@ public abstract class Interactor implements BaseInteractor {
     this.interactorExecutor = interactorExecutor;
   }
 
-  protected BaseInteractorExecutor getInteractorExecutor() {
+  protected @NonNull BaseInteractorExecutor getInteractorExecutor() {
     return interactorExecutor;
   }
 }

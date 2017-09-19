@@ -20,9 +20,9 @@ package com.hrules.imclean.domain.specifications;
 import android.support.annotation.NonNull;
 
 public abstract class Specification<T> {
-  private SpecificationParams params;
+  private SpecificationParams params = new SpecificationParams();
 
-  public SpecificationParams getParams() {
+  public @NonNull SpecificationParams getParams() {
     return params;
   }
 
@@ -32,5 +32,5 @@ public abstract class Specification<T> {
 
   public abstract @NonNull Class getParent();
 
-  public abstract T get();
+  public abstract @NonNull T get();
 }

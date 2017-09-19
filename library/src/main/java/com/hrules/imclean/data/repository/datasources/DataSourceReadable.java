@@ -23,7 +23,7 @@ import com.hrules.imclean.domain.specifications.Specification;
 import java.util.Collection;
 
 public abstract class DataSourceReadable<T extends ModelDto> extends DataSource<T> {
-  public abstract Collection<T> query(@NonNull Specification specification) throws Exception;
+  public abstract @NonNull Collection<T> query(@NonNull Specification specification) throws Exception;
 
   public abstract boolean isCacheExpired();
 }
