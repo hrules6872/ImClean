@@ -7,7 +7,7 @@ Add this dependency to your build.gradle file:
 
 ```java
 dependencies {
-    compile 'com.hrules:imclean:1.0.0'
+    compile 'com.hrules:imclean:1.0.1'
 }
 ```
 ### Examples
